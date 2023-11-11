@@ -5,7 +5,7 @@ class ProductsModel {
     private $db;
 
     public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;dbname=tienda computacion;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;dbname=tienda_computacion;charset=utf8', 'root', '');
     }
 
     //funciones para procesadores
