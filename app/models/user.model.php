@@ -1,11 +1,8 @@
 <?php
-    class UserModel {
 
-        private $db;
+    require_once ('model.php');
 
-        public function __construct() {
-            $this->db = new PDO('mysql:host=localhost;dbname=tienda_computacion;charset=utf8', 'root', '');
-        }
+    class UserModel extends Model{
 
         //lista de usuarios guardados en la base de datos
         public function getByUsername($username) {
