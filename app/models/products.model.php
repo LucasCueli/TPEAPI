@@ -12,8 +12,22 @@
             return $query->fetchAll(PDO::FETCH_OBJ);
         }
 
+        public function getAllProcesadoresOrder($params){
+            $sql = 'SELECT * FROM procesadores ';
+            if(isset($params['sort'])){
+                $sql .= ' ORDER BY ' . $params['sort'];
+            }
+            if(isset($params['order'])){
+                $sql .= ' ' . $params['order'];
+            }
+
+            $query = $this->db->prepare($sql);
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        }
+
         public function getProcesador($idProcesador){
-            $query = $this->db->prepare('SELECT * FROM procesadores where ID_procesadores = ?');
+            $query = $this->db->prepare('SELECT * FROM procesadores WHERE ID_procesadores = ?');
             $query->execute([$idProcesador]);
 
             return $query->fetch(PDO::FETCH_OBJ);
@@ -37,7 +51,21 @@
         //funciones para graficas
 
         public function getAllGraficas(){
-            $query = $this->db->prepare('SELECT * FROM graficas ORDER BY Marca ASC');
+            $query = $this->db->prepare('SELECT * FROM graficas');
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        public function getAllGraficasOrder($params){
+            $sql = 'SELECT * FROM graficas ';
+            if(isset($params['sort'])){
+                $sql .= ' ORDER BY ' . $params['sort'];
+            }
+            if(isset($params['order'])){
+                $sql .= ' ' . $params['order'];
+            }
+
+            $query = $this->db->prepare($sql);
             $query->execute();
             return $query->fetchAll(PDO::FETCH_OBJ);
         }
@@ -67,13 +95,27 @@
         //funciones para rams
 
         public function getAllRams(){
-            $query = $this->db->prepare('SELECT * FROM rams ORDER BY Marca ASC');
+            $query = $this->db->prepare('SELECT * FROM rams');
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        public function getAllRamsOrder($params){
+            $sql = 'SELECT * FROM rams ';
+            if(isset($params['sort'])){
+                $sql .= ' ORDER BY ' . $params['sort'];
+            }
+            if(isset($params['order'])){
+                $sql .= ' ' . $params['order'];
+            }
+
+            $query = $this->db->prepare($sql);
             $query->execute();
             return $query->fetchAll(PDO::FETCH_OBJ);
         }
 
         public function getRam($idRam){
-            $query = $this->db->prepare('SELECT * FROM rams where ID_RAM = ?');
+            $query = $this->db->prepare('SELECT * FROM rams');
             $query->execute([$idRam]);
 
             return $query->fetch(PDO::FETCH_OBJ);
@@ -97,7 +139,21 @@
         //funciones para gabinetes
 
         public function getAllGabinetes(){
-            $query = $this->db->prepare('SELECT * FROM gabinetes ORDER BY Marca ASC');
+            $query = $this->db->prepare('SELECT * FROM gabinetes');
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        public function getAllGabinetesOrder($params){
+            $sql = 'SELECT * FROM gabinetes ';
+            if(isset($params['sort'])){
+                $sql .= ' ORDER BY ' . $params['sort'];
+            }
+            if(isset($params['order'])){
+                $sql .= ' ' . $params['order'];
+            }
+
+            $query = $this->db->prepare($sql);
             $query->execute();
             return $query->fetchAll(PDO::FETCH_OBJ);
         }

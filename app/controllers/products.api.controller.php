@@ -13,7 +13,15 @@
         //controllers para procesadores
 
         function obtenerProcesadores($params = []){
-            $procesadores = $this->model->getAllProcesadores();
+            if (isset($_GET['sort'])){
+                $params['sort'] = $_GET['sort'];
+                if (isset($_GET['order'])){
+                    $params['order'] = $_GET['order'];
+                }
+                $procesadores = $this->model->getAllProcesadoresOrder($params);
+            } else if(empty($params)){
+                $procesadores = $this->model->getAllProcesadores();
+            }
 
             return $this->view->response($procesadores, 200);
         }
@@ -75,8 +83,16 @@
         //controllers para graficas
 
         function obtenerGraficas($params = []){
-            $graficas = $this->model->getAllGraficas();
-
+            if (isset($_GET['sort'])){
+                $params['sort'] = $_GET['sort'];
+                if (isset($_GET['order'])){
+                    $params['order'] = $_GET['order'];
+                }
+                $graficas = $this->model->getAllGraficasOrder($params);
+            } else if (empty($params)){
+                $graficas = $this->model->getAllGraficas();
+            }
+            
             return $this->view->response($graficas, 200);
         }
 
@@ -137,8 +153,16 @@
         //controllers para rams
 
         function obtenerRams($params = []){
-            $rams = $this->model->getAllRams();
-
+            if (isset($_GET['sort'])){
+                $params['sort'] = $_GET['sort'];
+                if (isset($_GET['order'])){
+                    $params['order'] = $_GET['order'];
+                }
+                $rams = $this->model->getAllRamsOrder($params);
+            } else if (empty($params)){
+                $rams = $this->model->getAllRams();
+            }
+        
             return $this->view->response($rams, 200);
         }
 
@@ -202,7 +226,15 @@
         //controllers para gabinetes
 
         function obtenerGabinetes($params = []){
-            $gabinetes = $this->model->getAllGabinetes();
+            if (isset($_GET['sort'])){
+                $params['sort'] = $_GET['sort'];
+                if (isset($_GET['order'])){
+                    $params['order'] = $_GET['order'];
+                }
+                $gabinetes = $this->model->getAllGabinetesOrder($params);
+            } else if (empty($params)){
+                $gabinetes = $this->model->getAllGabinetes();
+            }
 
             return $this->view->response($gabinetes, 200);
         }
@@ -238,8 +270,8 @@
             $tamaño = $body->Tamaño;
             $valor = $body->Valor; 
 
-            $this->model->addGabinete($marca,$modelo,$vram,$valor);
-            $this->view->response("La gabinete fue guardado exitosamente.", 201);
+            $this->model->addGabinete($marca,$modelo,$tamaño,$valor);
+            $this->view->response("El gabinete fue guardado exitosamente.", 201);
         }
 
         function actualizarGabinete($params= []){
