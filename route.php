@@ -37,5 +37,9 @@
     $router->addRoute('gabinetes', 'POST', 'ProductsApiController', 'agregarGabinete');
     $router->addRoute('gabinetes/:ID', 'PUT', 'ProductsApiController', 'actualizarGabinete');
 
+    //routes para users
+    $router->addRoute('user/token', 'GET' , 'UserApiController' , 'getToken');
+
+
     $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);
 ?>
