@@ -1,4 +1,4 @@
-# TPEAPI
+# TPE API
 Este es el repositorio del proyecto especial con API RESTful realizado por los alumnos Agustin Lucas Ramirez (DNI: 43909137) y Lucas Cueli Faijoo (DNI: 42818056) el cual consiste de una base de datos que simula una tienda de computación, la cual cuenta con: procesadores, graficas, RAMs y gabinetes.
 En esta ocación, el proyecto cuenta con la implementacion de una API RESTful, y mediante los endpoints que debajo se adjuntan, se podrá solicitar los datos de la base de datos implementada.
 
@@ -80,5 +80,6 @@ El procesador con la id 12 es actualizado con los datos que le colocamos en el b
 200 "OK"
 201 "Created"
 400 "Bad Request"
+401 "Unauthorized"
 404 "Not Found"
 500 "Internal Server Error"
