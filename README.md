@@ -12,43 +12,7 @@ Ejemplo: GET localhost/WEB_2/TPEAPI/api/procesadores
 
 Resultado:
 
-[
-    {
-        "ID_procesadores": "9",
-        "Marca": "Intel",
-        "Modelo": "i7-12700KF",
-        "Socket": "LGA 1700",
-        "Valor": "720"
-    },
-    {
-        "ID_procesadores": "10",
-        "Marca": "Intel",
-        "Modelo": "i5-10600",
-        "Socket": "LGA 1200",
-        "Valor": "500"
-    },
-    {
-        "ID_procesadores": "11",
-        "Marca": "Intel",
-        "Modelo": "i3-10600",
-        "Socket": "LGA 1200",
-        "Valor": "350"
-    },
-    {
-        "ID_procesadores": "12",
-        "Marca": "AMD",
-        "Modelo": "Ryzen 7 5700G",
-        "Socket": "AM4",
-        "Valor": "500"
-    },
-    {
-        "ID_procesadores": "13",
-        "Marca": "AMD",
-        "Modelo": "Ryzen 5 5600G",
-        "Socket": "AM4",
-        "Valor": "400"
-    }
-]
+![image](https://github.com/LucasCueli/TPEAPI/assets/144820025/b9915812-0592-4eaf-90f3-3d5cbac24928)
 
 2. Obtener un producto especifico por su ID:
 
@@ -58,13 +22,7 @@ Ejemplo: GET localhost/WEB_2/TPEAPI/api/procesadores/11
 
 Resultado: 
 
-{
-    "ID_procesadores": "11",
-    "Marca": "Intel",
-    "Modelo": "i3-10600",
-    "Socket": "LGA 1200",
-    "Valor": "350"
-}
+![image](https://github.com/LucasCueli/TPEAPI/assets/144820025/8c8b945b-8015-4c67-b640-4e4d182a812a)
 
 3. Obtener productos ordenado por campo en orden ascendente o descendente:
 
@@ -76,43 +34,7 @@ Ejemplo: GET localhost/WEB_2/TPEAPI/api/procesadores?sort=ID_procesadores&order=
 
 Resultado: 
 
-[
-    {
-        "ID_procesadores": "13",
-        "Marca": "AMD",
-        "Modelo": "Ryzen 5 5600G",
-        "Socket": "AM4",
-        "Valor": "400"
-    },
-    {
-        "ID_procesadores": "12",
-        "Marca": "AMD",
-        "Modelo": "Ryzen 7 5700G",
-        "Socket": "AM4",
-        "Valor": "500"
-    },
-    {
-        "ID_procesadores": "11",
-        "Marca": "Intel",
-        "Modelo": "i3-10600",
-        "Socket": "LGA 1200",
-        "Valor": "350"
-    },
-    {
-        "ID_procesadores": "10",
-        "Marca": "Intel",
-        "Modelo": "i5-10600",
-        "Socket": "LGA 1200",
-        "Valor": "500"
-    },
-    {
-        "ID_procesadores": "9",
-        "Marca": "Intel",
-        "Modelo": "i7-12700KF",
-        "Socket": "LGA 1700",
-        "Valor": "720"
-    }
-]
+![image](https://github.com/LucasCueli/TPEAPI/assets/144820025/acceba4b-1e38-4fb6-9692-a96a26d37dfb)
 
 4. Crear un nuevo producto:
 
@@ -127,6 +49,8 @@ Body:
     "Socket": "AM4",
     "Valor": "450"
 }
+
+![image](https://github.com/LucasCueli/TPEAPI/assets/144820025/42e0bce3-3cbc-4758-b60b-7c6060948602)
 
 El procesador es guardado y colocado en la base de datos. Cuando se vuelve a solicitar una lista con todos los procesadores (GET), el nuevo procesador se encuentra en ella con una nueva ID.
 
@@ -143,6 +67,8 @@ Body:
     "Socket": "AM4",
     "Valor": "550"
 }
+
+![image](https://github.com/LucasCueli/TPEAPI/assets/144820025/bb9144e4-9e5b-4511-b846-8f9e3a1df4f8)
 
 El procesador con la id 12 es actualizado con los datos que le colocamos en el body.
 
